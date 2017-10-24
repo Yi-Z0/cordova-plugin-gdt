@@ -1,10 +1,19 @@
 {
-  "name": "gdt",
+  "name": "cordova-plugin-gdt",
+  "cordova": {
+    "id": "cordova-plugin-gdt",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YouYII/cordova-plugin-gdt.git"
+  },
   "keywords": [
     "ecosystem:cordova",
     "cordova-android",
-    "cordova-ios",
-    "cordova-windows"
+    "gdt"
     ],
   "version": "1.0.0",
   "description": "",
