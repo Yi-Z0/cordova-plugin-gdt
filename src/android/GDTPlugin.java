@@ -36,7 +36,7 @@ public class GDTPlugin extends CordovaPlugin {
 
       ui.runOnUiThread(new Runnable() {
         public void run() {
-          me.bannerView = new BannerView(ui, ADSize.BANNER, android.R.string.gdt_app_id, android.R.string.gdt_banner_pos_id);
+          me.bannerView = new BannerView(ui, ADSize.BANNER, me.getStringResourceByName("gdt_app_id"), me.getStringResourceByName("gdt_banner_pos_id"));
 
           me.bannerView.setRefresh(30);
           me.bannerView.setADListener(new AbstractBannerADListener() {
@@ -101,5 +101,12 @@ public class GDTPlugin extends CordovaPlugin {
       }
     }
     return true;
+  }
+
+  public String getStringResourceByName(String aString) {
+    Activity activity = cordova.getActivity();
+    String packageName = activity.getPackageName();
+    int resId = activity.getResources().getIdentifier(aString, "string", packageName);
+    return activity.getString(resId);
   }
 }

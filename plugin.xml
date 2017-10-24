@@ -8,7 +8,7 @@
   <keywords>cordova,gdt,ads</keywords>
 
   <preference name="APPID" />
-  <preference name="BannerPosID" />
+  <preference name="BANNER_POS_ID" />
 
   <platform name="android">
     <config-file parent="/*" target="res/xml/config.xml">
@@ -34,9 +34,9 @@
 
     <config-file target="res/values/strings.xml" parent="/resources">
             <string name="gdt_app_id">$APPID</string>
-            <string name="gdt_banner_pos_id">$BannerPosID</string>
+            <string name="gdt_banner_pos_id">$BANNER_POS_ID</string>
     </config-file>
-    
+
     <source-file src="src/android/GDTPlugin.java" target-dir="src/com/cordova/plugin"/>
     <source-file src="src/android/libs/GDTUnionSDK.4.8.524.min.jar" target-dir="libs" />
   </platform>
