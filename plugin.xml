@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="gdt-cordova-plugin" version="1.0.0">
+  <name>GDT Plugin</name>
+  <js-module name="GDT Plugin" src="www/gdt.js">
+    <clobbers target="gdt"/>
+  </js-module>
+  <keywords>cordova,gdt,ads</keywords>
+
+  <preference name="APPID" />
+  <preference name="BannerPosID" />
+
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="GDTPlugin">
+        <param name="android-package" value="com.cordova.plugin.GDTPlugin"/>
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service android:name="com.qq.e.comm.DownloadService" android:exported="false" />
+      <activity android:name="com.qq.e.ads.ADActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml">
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+        <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+    </config-file>
+
+    <config-file target="res/values/strings.xml" parent="/resources">
+            <string name="gdt_app_id">$APPID</string>
+            <string name="gdt_banner_pos_id">$BannerPosID</string>
+    </config-file>
+    
+    <source-file src="src/android/GDTPlugin.java" target-dir="src/com/cordova/plugin"/>
+    <source-file src="src/android/libs/GDTUnionSDK.4.8.524.min.jar" target-dir="libs" />
+  </platform>
+</plugin>

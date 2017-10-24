@@ -1,0 +1,13 @@
+{
+  "name": "gdt",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows"
+    ],
+  "version": "1.0.0",
+  "description": "",
+  "author": "zy",
+  "license": "ISC"
+}
